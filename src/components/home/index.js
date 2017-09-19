@@ -37,7 +37,7 @@ class Home extends React.Component {
     return (
       <div className='list'>
         <Spin spinning={spinning}>
-          <NoData visable={!lists.length}/>
+          <NoData visable={!lists.length && !spinning}/>
           <List lists={lists}/>
         </Spin>
       </div>

@@ -2,10 +2,12 @@ const shortid = require('shortid')
 const fs = require('fs')
 const { ArticalModel, ArticleEntity } = require('../../models/article')
 const co = require('co')
+const filename = process.env.NODE_ENV == 'production' ? require('../../webpack-assets.json').main.js : 'main.bundle.js'
 module.exports = function (app) {
   app.get('/', function (req, res, next) {
     res.render('index', {
-      title: 'szxLH\' Blog'
+      title: 'szxLH\' Blog',
+      scripts: [`/${process.env.NODE_ENV == 'production' ? 'prod' : 'dev'}/${filename}`]
     })
   })
 

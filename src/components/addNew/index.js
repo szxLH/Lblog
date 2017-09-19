@@ -1,8 +1,7 @@
 import React from 'react'
 import {
   Button,
-  Spin,
-  notification
+  Spin
 } from 'antd'
 import * as articleService from '$service/article'
 import Detail from '$components/includes/detail'

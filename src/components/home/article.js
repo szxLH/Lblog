@@ -4,7 +4,6 @@ import Detail from '$components/includes/detail'
 import NoData from '$components/includes/nodata'
 import showdown from 'showdown'
 import {
-  Button,
   Spin,
   notification
 } from 'antd'

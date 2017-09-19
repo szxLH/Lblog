@@ -1,11 +1,11 @@
 import React from 'react'
-import { format } from '$utility'
+// import { format } from '$utility'
 import { Link } from 'react-router'
 import { type } from '$config'
 import {
   Row,
-  Col,
-  Icon
+  Col
+  // Icon
 } from 'antd'
 
 class Card extends React.Component {
@@ -17,14 +17,14 @@ class Card extends React.Component {
         <div className='card-content'>
           <Row className='card-head'>
             <Col span={8}>分类：<span className='card-source'>{category.name}</span></Col>
-            <Col span={16} className='card-time'>{format(data._create_at)}</Col>
+            {/* <Col span={16} className='card-time'>{format(data._create_at)}</Col> */}
           </Row>
           <Link to={`/article/${data._id}`}>
             <Row className='card-title'>{data.title}</Row>
             <Row className='card-body'>{data.introduction}</Row>
           </Link>
         </div>
-        <Row className='card-footer'>
+        {/* <Row className='card-footer'>
           <Col span={8}>
             <Icon type="like" />
             <span>{data.stars}</span>
@@ -37,7 +37,7 @@ class Card extends React.Component {
             <Icon type="eye-o" />
             <span>{data.visits}</span>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     )
   }

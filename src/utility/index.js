@@ -38,5 +38,5 @@ export const $http = {
 }
 
 export function getIdentity () {
-  return true
+  return false
 }

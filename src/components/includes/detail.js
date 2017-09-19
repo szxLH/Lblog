@@ -1,6 +1,5 @@
 import React from 'react'
 import { type } from '$config'
-import cn from 'classnames'
 
 class ContentShow extends React.Component {
   render () {
