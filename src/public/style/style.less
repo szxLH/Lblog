@@ -1,0 +1,142 @@
+@green-bg: #3aced5;
+@black-font: #3e4545;
+@gray-font: #999;
+@border-color: #eef2f2;
+
+.global-nav {
+    .nav-left {
+        background: none;
+    }
+    .nav-right {
+        position: fixed;
+        right: 40px;
+        top: 10px;
+    }
+    > div {
+        background: @green-bg;
+    }
+}
+
+.wrap {
+    width: 660px;
+    font-size: 17px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (max-width: 1000px) {
+    .wrap {
+        width: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .nav-right {
+        display: none;
+    }
+}
+@media (max-width: 720px) {
+    .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.card {
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    .card-content {
+        padding: 25px;
+        font-size: 15px;
+    }
+    .card-head {
+        color: @gray-font;
+        .card-source {
+            color: @black-font;
+            margin-left: 5px;
+        }
+        .card-time {
+            font-size: 14px;
+            text-align: right;
+        }
+    }
+    .card-title {
+        color: @green-bg;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.32;
+        margin-top: 8px;
+    }
+    .card-body {
+        line-height: 25px;
+        margin-top: 10px;
+    }
+    .card-footer {
+        div {
+            padding: 10px 0;
+            border: 1px solid @border-color;
+        }
+        text-align: center;
+        span {
+            margin-left: 10px;
+        }
+    }
+}
+
+.main {
+    margin-top: 20px;
+    padding-bottom: 40px;
+    .list {
+        // width: 660px;
+        margin: 0 auto;
+        color: @black-font;
+        line-height: 1.6;
+        
+    }
+}
+
+@media (max-width: 720px) {
+    .main .list {
+        width: auto;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+a {
+    color: inherit;
+}
+
+.ant-form-item {
+    margin-bottom: 10px;
+}
+
+.article {
+    & > div, & > p {
+        background: #fff;
+        padding: 15px 30px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+}
+
+.content {
+    padding-bottom: 45px!important;
+    h1, h2, h3, div, p {
+        margin: 15px 0;
+    }
+    p {
+        text-indent: 2em;
+        line-height: 1.8;
+    }
+    pre {
+        background: #f7f7f7;
+        padding: 15px 30px;
+        white-space: pre-wrap;
+    }
+    ul {
+        list-style: unset;
+        margin-left: 3em;
+        // list-style-position: inside;
+    }
+}
