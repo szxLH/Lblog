@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory, Redirect } from 'react-router'
 import App from './App'
-import Article from '$components/home/article'
+import Article from './views/home/article'
+import PageNotFound from './views/404'
 import { menu } from './config'
 import { getIdentity } from '$utility'
 import './public/style/antd'
@@ -16,7 +17,7 @@ function renderRouter () {
       <Route path='/' component={App}>
         {
           renderViews.map((view, i) => {
-            const View = require(`./components/${view.key}/index.js`)
+            const View = require(`./views/${view.key}/index.js`)
             if (i === 0) {
               return ([
                 <IndexRoute key={view.key} component={View.default} />,
@@ -29,8 +30,10 @@ function renderRouter () {
             }
           })
         }
-        <Route path='/article(/:id)' component={Article} />
+        <Route path='/article/:id' component={Article} />
       </Route>
+      <Route path='/404' component={PageNotFound} />
+      <Redirect from='*' to='/404' />
     </Router>
   )
 }

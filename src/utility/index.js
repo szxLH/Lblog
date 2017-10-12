@@ -1,5 +1,6 @@
 import moment from 'moment'
 import request from 'superagent'
+import crypto from 'crypto'
 
 export function format (time) {
   return moment(time).format('YYYY-MM-DD HH:mm:ss')
@@ -30,13 +31,17 @@ export const $http = {
           if (err) {
             reject(err)
           } else {
-            resolve(res)
+            resolve(res.body)
           }
         })
     })
   }
 }
 
+export function getMD5 (str) {
+  return crypto.createHash('md5').update(str).digest('hex')
+}
+
 export function getIdentity () {
-  return false
+  return true
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import { hashHistory } from 'react-router'
 import * as articleService from '$service/article'
-import Detail from '$components/includes/detail'
-import NoData from '$components/includes/nodata'
+import Detail from '$components/detail'
+import NoData from '$components/nodata'
 import showdown from 'showdown'
 import {
   Spin,
@@ -41,6 +42,7 @@ class Article extends React.Component {
         duration: 6
       })
       this.setState({ spinning: false })
+      hashHistory.push('/404')
     }
   }
 

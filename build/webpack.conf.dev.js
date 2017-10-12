@@ -8,6 +8,6 @@ config.output = {
   publicPath: '/public/'
 }
 
-config.devtool = 'eval'
+config.devtool = 'source-map'
 
 module.exports = config

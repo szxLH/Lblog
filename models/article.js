@@ -1,8 +1,4 @@
-// var db = require('./db'),
-//     mongoose = db.mongoose,
-//     Schema = mongoose.Schema,
-//     base = db.base
-const mongoose = require('./db').mongoose
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 var articleSchema = new Schema({
@@ -23,13 +19,18 @@ var articleSchema = new Schema({
   type: String,
   introduction: String,
   content: String,
-  _create_at: {
+  create_time: {
     type: Date,
     default: new Date()
   },
-  _modify_at: {
+  update_time: {
     type: Date,
     default: new Date()
+  }
+}, {
+  timestamps: {
+    _create_at: 'create_time',
+    _update_at: 'update_time'
   }
 })
 
@@ -44,13 +45,4 @@ exports.ArticleEntity = {
   content: ''
 }
 
-// articleSchema.pre('insertMany', function (next, a) {
-//   console.log('will save===================',this)
-//   console.log('next===================', next)
-//   console.log('aaaaaa===================',a)
-//   this._create_at = new Date()
-//   this._modify_at = new Date()
-//   next()
-// })
-
- exports.ArticalModel = mongoose.model('Article', articleSchema)
+exports.ArticalModel = mongoose.model('Article', articleSchema)

@@ -6,14 +6,26 @@
 .global-nav {
     .nav-left {
         background: none;
+        margin-right: 150px;
     }
     .nav-right {
-        position: fixed;
-        right: 40px;
-        top: 10px;
+        float: right;
+        width: 150px;
+        margin-top: 10px;
     }
     > div {
         background: @green-bg;
+    }
+    .login {
+        color: #fff;
+        cursor: pointer;
+        text-decoration: underline;
+        img {
+            width: 30px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
     }
 }
 
@@ -30,9 +42,9 @@
         padding-left: 40px;
         padding-right: 40px;
     }
-    .nav-right {
-        display: none;
-    }
+    // .nav-right {
+    //     display: none;
+    // }
 }
 @media (max-width: 720px) {
     .wrap {
