@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config ./build/webpack.conf.dev.js -w --progress",
-    "build": "webpack --config ./build/webpack.conf.prod.js -w --progress",
-    "dev": "node ./app/",
-    "prod": "NODE_ENV=production supervisor ./app/",
+    "build": "webpack --config ./build/webpack.conf.prod.js --progress",
+    "dev": "cross-env NODE_ENV=development node ./app/",
+    "prod": "set NODE_ENV=production&&node ./app/",
     "lint": "eslint src/**/*.js --cache",
-    "crawler": "NODE_ENV=development node ./app/crawler.js"
+    "crawler": "cross-env NODE_ENV=development node ./app/crawler.js"
   },
   "keywords": [
     "blog",
@@ -76,6 +76,7 @@
     "mongoose": "^4.8.3",
     "morgan": "^1.8.0",
     "redis": "^2.6.5",
-    "showdown": "^1.7.4"
+    "showdown": "^1.7.4",
+    "winston": "^2.4.0"
   }
 }

@@ -1,8 +1,8 @@
 var path = require('path')
 var express = require('express')
-process.env.NODE_ENV = 'development'
-
-var logger = require('morgan')
+// process.env.NODE_ENV = 'production'
+var morgan = require('morgan')
+var logger = require('./utils/logger')
 var bodyParser = require('body-parser')
 var session = require('express-session')
 var config = require('config-lite')
@@ -11,7 +11,9 @@ require('../models/db')
 var routes = require('./routes')
 var app = express()
 
-app.use(logger())
+// app.use(morgan())
+app.use(morgan({stream: logger.stream}))
+
 app.set('views', path.join(__dirname, './views'))
 app.set('view engine', 'ejs')
 
