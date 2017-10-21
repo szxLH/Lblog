@@ -3,7 +3,7 @@ var logger = new winston.Logger({
   transports: [
     new winston.transports.File({
       level: 'info',
-      filename: './log/logs.js',
+      filename: './log/logs.txt',
       colorize: false
     }),
     new winston.transports.Console({
