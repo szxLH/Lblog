@@ -8,7 +8,7 @@
     "start": "webpack --config ./build/webpack.conf.dev.js -w --progress",
     "build": "webpack --config ./build/webpack.conf.prod.js --progress",
     "dev": "NODE_ENV=development node ./app/",
-    "prod": "set NODE_ENV=production&&node ./app/",
+    "prod": "NODE_ENV=production node ./app/",
     "lint": "eslint src/**/*.js --cache",
     "crawler": "cross-env NODE_ENV=development node ./app/crawler.js"
   },

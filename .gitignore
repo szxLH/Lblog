@@ -1,6 +1,6 @@
 node_modules
 .eslintcache
 config/production.js
-app/public/dev
+app/public/*
 log/
 **/.DS_Store

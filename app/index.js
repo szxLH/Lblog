@@ -21,7 +21,6 @@ app.use(express.static(path.join(__dirname, './public')))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 app.use(session({
   name: 'lbolg-sid',
   resave: true, // don't save session if unmodified
